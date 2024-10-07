@@ -39,15 +39,18 @@ public class PromedioGrupo{
 
         }
     }
+    public static void imprimirAlumnos(){
+        System.out.println("Contenido del arreglo Alumnos");
+        for(Alumno a : alumnos){
+            System.out.println("-----------------------------------------");
+            System.out.println("Información del Alumno");
+            System.out.println(a.toString());
+        }
+    }
+
     public static void main(String[] args) throws IOException{
         int n; // tamaño de grupo
-
-
-        // double [] calificaciones; // calificaciones de cada alumno
-        // double suma = 0; //para sumar calificaciones
-        // double promedio; // el promedio del grupo
-
-
+         double promedio; // el promedio del grupo
 
         System.out.println("Programa que calcula el promedio de un grupo");
         System.out.println("------------------------------------");
@@ -56,28 +59,25 @@ public class PromedioGrupo{
         entrada = bufer.readLine(); //Lectura de teclado
         n = Integer.parseInt(entrada); // Conversion de String a int
 
-       // calificaciones = new double[n]; // construcción del arreglo
-
         // construir el arreglo alumnos
         alumnos = new Alumno[n];
+        //Introducir información de los alumnos
+        leerAlumnos();
+        // Introducir información
+        imprimirAlumnos();
 
-        // Pedir cada calificaión y acumularla
-        // for( int i = 0; i < calificaciones.length; i++){
-        //     System.out.println("Escribe la calificación del alumno [" + (i+1) + "]: ");
-        //     entrada = bufer.readLine();
-        //     calificaciones[i] = Double.parseDouble(entrada);
-        //     suma += calificaciones[i];
-        // }
+
+
         // Obtener el promedio
-    //     promedio = suma / n;
+        //     promedio = suma / n;
 
-    //     System.out.println("-----------------------------------------");
-    //     System.out.println("Las calificaciones de alumno son: ");
-    //     for(double calif : calificaciones){
-    //         System.out.println(calif);
-    //     }
-    //     System.out.println("-------------------------------------");
-    //     System.out.println("El promedio del grupo es: " + promedio);
-    // }
-}
+        //     System.out.println("-----------------------------------------");
+        //     System.out.println("Las calificaciones de alumno son: ");
+        //     for(double calif : calificaciones){
+        //         System.out.println(calif);
+        //     }
+        //     System.out.println("-------------------------------------");
+        //     System.out.println("El promedio del grupo es: " + promedio);
+        // }
+    }
 }
